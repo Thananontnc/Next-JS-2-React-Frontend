@@ -20,9 +20,9 @@ function TestApi() {
     }, []);
 
     return (
-        <div style={{ padding: '20px', textAlign: 'center' }}>
+        <div>
             <h2>API Test Result</h2>
-            <p style={{ fontSize: '24px', color: '#646cff', fontWeight: 'bold' }}>
+            <p>
                 Message: {message}
             </p>
         </div>
