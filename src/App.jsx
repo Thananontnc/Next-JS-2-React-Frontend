@@ -16,11 +16,7 @@ function Home() {
 
   return (
     <div>
-      <h1>Home Page</h1>
       <p>Message: {message}</p>
-      <Link to="/test_api">
-        <button>Go to Test API</button>
-      </Link>
     </div>
   );
 }
