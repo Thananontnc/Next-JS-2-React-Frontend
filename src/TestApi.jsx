@@ -6,7 +6,7 @@ function TestApi() {
     useEffect(() => {
         async function fetchData() {
             try {
-                const result = await fetch('http://localhost:3001/api/hello');
+                const result = await fetch('http://localhost:3000/api/hello');
                 const json = await result.json();
                 setData(json);
             } catch (error) {

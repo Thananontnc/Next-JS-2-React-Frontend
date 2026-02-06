@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './ItemManagement.css';
 
-const API_BASE_URL = 'http://localhost:3001/api/item';
+const API_BASE_URL = 'http://localhost:3000/api/item';
 
 const ItemManagement = () => {
     const [items, setItems] = useState([]);
