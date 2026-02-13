@@ -1,5 +1,6 @@
 import { useUser } from "./contexts/UserProvider";
 import { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import './Profile.css';
 
 export default function Profile() {
@@ -8,6 +9,7 @@ export default function Profile() {
     const [data, setData] = useState({});
     const [hasImage, setHasImage] = useState(false);
     const fileInputRef = useRef(null);
+    const navigate = useNavigate();
     const API_URL = import.meta.env.VITE_API_URL;
 
     async function onUpdateImage() {
@@ -58,6 +60,10 @@ export default function Profile() {
         }
     }
 
+    function handleLogout() {
+        navigate('/logout');
+    }
+
     useEffect(() => {
         fetchProfile();
     }, []);
@@ -65,7 +71,10 @@ export default function Profile() {
     return (
         <div className="profile-container">
             <div className="profile-card">
-                <h2>User Profile</h2>
+                <div className="profile-header">
+                    <h2>User Profile</h2>
+                    <button onClick={handleLogout} className="logout-btn">Logout</button>
+                </div>
                 {isLoading ? (
                     <div className="loading">Loading...</div>
                 ) : (
